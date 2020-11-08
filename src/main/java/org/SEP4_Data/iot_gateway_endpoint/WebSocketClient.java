@@ -27,14 +27,7 @@ public class WebSocketClient extends TextWebSocketHandler {
     protected void handleTextMessage(WebSocketSession session, TextMessage message) {
         System.out.println(message.getPayload());
 
-        // extract the message here(or somewhere else - S from SOLID) and make new measuremntDTO, then parse it to DB
-    }
-
-    @SneakyThrows
-    public static void main(String[] args) { // stuff we send to IoT so tey can invoke callback
-        var sampleClient = new WebSocketClient();
-        sampleClient.getClientSession().sendMessage(new TextMessage("Hello!"));
-        Thread.sleep(2000);
+        // extract the message here(or somewhere else - S from SOLID) and make new measurementDTO, then parse it to DB
     }
 
 }
